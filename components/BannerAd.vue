@@ -1,6 +1,3 @@
-<template>
-    <div :id="id"></div>
-</template>
 <script type="text/babel">
     export default {
         name: 'BannerAd',
@@ -83,7 +80,17 @@
             googletag.cmd.push(() => {
                 googletag.destroySlots()
             })
-        }
+        },
+        render(h) {
+            return h(
+              'div',
+              {
+                attrs: {
+                  id: this.id,
+                },
+              }
+            )
+          }
     }
 </script>
 
